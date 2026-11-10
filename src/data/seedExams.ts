@@ -1,0 +1,590 @@
+import { Exam } from '../types/exam';
+
+export const INITIAL_EXAMS: Exam[] = [
+  // 1. UNEB UCE 2024 Mathematics Paper 1 (S.4)
+  {
+    id: 'exam-uneb-uce-math-2024',
+    title: 'UNEB UCE 2024 Mathematics Paper 1',
+    subject: 'Mathematics',
+    level: 'o_level',
+    classGrade: 'S.4',
+    category: 'past_paper',
+    examBoard: 'UNEB / UCE',
+    code: '456/1',
+    year: '2024',
+    session: 'October/November Official UNEB',
+    durationMinutes: 90,
+    totalMarks: 50,
+    instructions: [
+      'Answer all questions in Section A and Section B as directed.',
+      'Show all necessary working clearly. Marks are awarded for correct working.',
+      'Silent, non-programmable scientific calculators and mathematical tables may be used.',
+    ],
+    createdAt: '2026-11-01T08:00:00Z',
+    status: 'ready',
+    questions: [
+      {
+        id: 'uce-m-q1',
+        number: 1,
+        type: 'multiple_choice',
+        text: 'Simplify the algebraic expression: 3(2x - 5) - 4(x - 3) + 7',
+        marks: 3,
+        choices: [
+          { id: 'A', label: 'A', text: '2x + 4' },
+          { id: 'B', label: 'B', text: '2x - 4' },
+          { id: 'C', label: 'C', text: '2x - 10' },
+          { id: 'D', label: 'D', text: '10x - 14' },
+        ],
+        correctAnswer: 'A',
+        modelAnswer: 'Expand the brackets:\n3(2x - 5) = 6x - 15\n-4(x - 3) = -4x + 12\nCombine like terms:\n(6x - 4x) + (-15 + 12 + 7) = 2x + 4.',
+        explanation: 'Carefully distribute signs: -4 times -3 equals +12.',
+        topic: 'Algebra & Linear Equations',
+      },
+      {
+        id: 'uce-m-q2',
+        number: 2,
+        type: 'numerical',
+        text: 'In right-angled triangle PQR shown in the diagram, angle Q = 90°, PQ = 12 cm, and QR = 5 cm. Calculate the exact length of the hypotenuse PR in cm.',
+        marks: 3,
+        diagramSvg: `<svg viewBox="0 0 320 200" class="w-full max-w-sm mx-auto stroke-[#005ce6] fill-none" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="40,160 260,160 40,40" stroke="currentColor" stroke-width="2.5" fill="rgba(0, 92, 230, 0.08)" />
+  <rect x="40" y="145" width="15" height="15" stroke="currentColor" stroke-width="1.5" />
+  <text x="25" y="170" fill="#001f3f" font-size="13" font-weight="bold">Q (90°)</text>
+  <text x="268" y="170" fill="#001f3f" font-size="13" font-weight="bold">R</text>
+  <text x="30" y="35" fill="#001f3f" font-size="13" font-weight="bold">P</text>
+  <text x="18" y="105" fill="#313131" font-size="12" font-weight="600">12 cm</text>
+  <text x="140" y="180" fill="#313131" font-size="12" font-weight="600">5 cm</text>
+  <text x="160" y="90" fill="#005ce6" font-size="13" font-weight="bold">PR = ?</text>
+</svg>`,
+        diagramDescription: 'Right triangle PQR with right angle at Q, PQ = 12 cm, QR = 5 cm, hypotenuse PR to be calculated.',
+        correctAnswer: '13',
+        modelAnswer: 'By Pythagoras theorem:\nPR² = PQ² + QR²\nPR² = 12² + 5² = 144 + 25 = 169\nPR = √169 = 13 cm.',
+        explanation: 'The Pythagorean triple (5, 12, 13) gives PR = 13 cm.',
+        topic: 'Geometry & Pythagoras Theorem',
+      },
+      {
+        id: 'uce-m-q3',
+        number: 3,
+        type: 'short_answer',
+        text: 'Solve the quadratic equation by factorisation: 2x² - 7x + 3 = 0. State the two values of x.',
+        marks: 4,
+        correctAnswer: 'x = 3 or x = 0.5',
+        modelAnswer: 'Factorising 2x² - 7x + 3 = 0:\nProduct = 2 * 3 = 6, Sum = -7. Factors are -6 and -1.\n2x² - 6x - x + 3 = 0\n2x(x - 3) - 1(x - 3) = 0\n(2x - 1)(x - 3) = 0\nTherefore, 2x - 1 = 0 => x = 1/2 (or 0.5), or x - 3 = 0 => x = 3.',
+        explanation: 'Both roots x = 0.5 (or 1/2) and x = 3 are required for full marks.',
+        topic: 'Quadratic Equations',
+      },
+      {
+        id: 'uce-m-q4',
+        number: 4,
+        type: 'multiple_choice',
+        text: 'A bag contains 5 red pens and 7 blue pens. A pen is drawn at random and not replaced. A second pen is then drawn. Find the probability that both pens drawn are red.',
+        marks: 3,
+        choices: [
+          { id: 'A', label: 'A', text: '5/33' },
+          { id: 'B', label: 'B', text: '25/144' },
+          { id: 'C', label: 'C', text: '5/12' },
+          { id: 'D', label: 'D', text: '1/6' },
+        ],
+        correctAnswer: 'A',
+        modelAnswer: 'Total pens = 5 + 7 = 12.\nP(1st red) = 5/12.\nRemaining red pens = 4, total remaining = 11.\nP(2nd red | 1st red) = 4/11.\nP(both red) = (5/12) * (4/11) = 20/132 = 5/33.',
+        explanation: 'Since there is no replacement, total sample space drops from 12 to 11.',
+        topic: 'Probability & Statistics',
+      },
+    ],
+  },
+
+  // 2. UNEB PLE 2024 Mathematics (P.7)
+  {
+    id: 'exam-uneb-ple-math-2024',
+    title: 'UNEB PLE 2024 Primary Leaving Examination - Mathematics',
+    subject: 'Mathematics',
+    level: 'primary',
+    classGrade: 'P.7',
+    category: 'past_paper',
+    examBoard: 'UNEB / PLE',
+    code: 'PLE-MATH-24',
+    year: '2024',
+    session: 'November PLE Official',
+    durationMinutes: 75,
+    totalMarks: 40,
+    instructions: [
+      'Answer all questions in Section A and Section B.',
+      'Show all calculations clearly on the answer space.',
+      'Electronic calculators are not allowed.',
+    ],
+    createdAt: '2026-11-02T09:00:00Z',
+    status: 'ready',
+    questions: [
+      {
+        id: 'ple-m-q1',
+        number: 1,
+        type: 'numerical',
+        text: 'Work out: 345 + 189',
+        marks: 2,
+        correctAnswer: '534',
+        modelAnswer: '345 + 189 = 534.',
+        explanation: 'Add units (5+9=14, carry 1), tens (4+8+1=13, carry 1), hundreds (3+1+1=5).',
+        topic: 'Whole Numbers',
+      },
+      {
+        id: 'ple-m-q2',
+        number: 2,
+        type: 'multiple_choice',
+        text: 'Given that Set P = {2, 3, 5, 7} and Set Q = {1, 3, 5, 9}. Find the intersection set (P ∩ Q).',
+        marks: 2,
+        choices: [
+          { id: 'A', label: 'A', text: '{3, 5}' },
+          { id: 'B', label: 'B', text: '{1, 2, 7, 9}' },
+          { id: 'C', label: 'C', text: '{2, 3, 5}' },
+          { id: 'D', label: 'D', text: '{1, 2, 3, 5, 7, 9}' },
+        ],
+        correctAnswer: 'A',
+        modelAnswer: 'Elements common to both P and Q are 3 and 5. Hence P ∩ Q = {3, 5}.',
+        explanation: 'Intersection means elements present in both sets.',
+        topic: 'Set Concepts',
+      },
+      {
+        id: 'ple-m-q3',
+        number: 3,
+        type: 'numerical',
+        text: 'A pupil bought 3 books at UGX 2,500 each and a pen at UGX 1,200. How much change did she receive from a UGX 10,000 note?',
+        marks: 3,
+        correctAnswer: '1300',
+        modelAnswer: 'Cost of books = 3 * 2500 = UGX 7,500.\nCost of pen = UGX 1,200.\nTotal spent = 7500 + 1200 = UGX 8,700.\nChange = 10,000 - 8,700 = UGX 1,300.',
+        explanation: 'Subtract total cost UGX 8,700 from UGX 10,000 note to obtain UGX 1,300.',
+        topic: 'Money & Commercial Arithmetic',
+      },
+      {
+        id: 'ple-m-q4',
+        number: 4,
+        type: 'numerical',
+        text: 'The perimeter of a rectangular classroom is 48 metres. If its length is 16 metres, find its width in metres.',
+        marks: 3,
+        correctAnswer: '8',
+        modelAnswer: 'Perimeter = 2 * (length + width) = 48 m.\nlength + width = 48 / 2 = 24 m.\n16 + width = 24 => width = 24 - 16 = 8 metres.',
+        explanation: 'Width is 8 metres.',
+        topic: 'Lines, Angles & Perimeter',
+      },
+    ],
+  },
+
+  // 3. UNEB PLE 2023 Integrated Science (P.7)
+  {
+    id: 'exam-uneb-ple-science-2023',
+    title: 'UNEB PLE 2023 Integrated Science',
+    subject: 'Integrated Science',
+    level: 'primary',
+    classGrade: 'P.7',
+    category: 'past_paper',
+    examBoard: 'UNEB / PLE',
+    code: 'PLE-SCI-23',
+    year: '2023',
+    session: 'November PLE Official',
+    durationMinutes: 75,
+    totalMarks: 40,
+    instructions: [
+      'Answer all questions in Section A and Section B.',
+      'Write short, precise scientific answers.',
+    ],
+    createdAt: '2026-11-03T10:00:00Z',
+    status: 'ready',
+    questions: [
+      {
+        id: 'ple-sci-q1',
+        number: 1,
+        type: 'multiple_choice',
+        text: 'Which blood cell is responsible for carrying oxygen from the lungs to all body tissues?',
+        marks: 1,
+        choices: [
+          { id: 'A', label: 'A', text: 'Red blood cells (erythrocytes)' },
+          { id: 'B', label: 'B', text: 'White blood cells (leukocytes)' },
+          { id: 'C', label: 'C', text: 'Blood platelets (thrombocytes)' },
+          { id: 'D', label: 'D', text: 'Blood plasma' },
+        ],
+        correctAnswer: 'A',
+        modelAnswer: 'Red blood cells contain haemoglobin which binds reversibly with oxygen to form oxyhaemoglobin.',
+        explanation: 'Red blood cells transport oxygen; white blood cells fight infections.',
+        topic: 'Human Circulatory System',
+      },
+      {
+        id: 'ple-sci-q2',
+        number: 2,
+        type: 'short_answer',
+        text: 'State any two methods farmers in Uganda use to preserve harvested crops such as maize and beans.',
+        marks: 2,
+        correctAnswer: 'Sun drying and using storage silos / airtight bags with ash',
+        modelAnswer: '1. Sun drying to reduce moisture content below 13%.\n2. Storing in clean, dry granaries/airtight hermetic bags (PICS bags) or mixing with ash/pesticides.',
+        explanation: 'Drying prevents mould and fungal attacks.',
+        topic: 'Crop Husbandry & Food Preservation',
+      },
+      {
+        id: 'ple-sci-q3',
+        number: 3,
+        type: 'short_answer',
+        text: 'Refer to the diagram of the human digestive system. Name the organ labelled X where bile is produced, and state the function of bile.',
+        marks: 3,
+        diagramSvg: `<svg viewBox="0 0 320 220" class="w-full max-w-sm mx-auto stroke-[#005ce6] fill-none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 120,20 L 120,70" stroke="#7b8698" stroke-width="6" />
+  <text x="135" y="45" fill="#7b8698" font-size="11">Gullet / Oesophagus</text>
+  <path d="M 70,80 C 70,60 140,60 150,90 C 130,120 70,120 70,80 Z" fill="rgba(245, 158, 11, 0.15)" stroke="#f59e0b" stroke-width="2" />
+  <text x="85" y="95" fill="#8a4508" font-size="13" font-weight="bold">X (Organ)</text>
+  <path d="M 125,75 C 160,75 190,90 190,125 C 190,145 160,150 135,140" stroke="#005ce6" stroke-width="3" fill="rgba(0, 92, 230, 0.08)" />
+  <text x="200" y="115" fill="#001f3f" font-size="11" font-weight="bold">Stomach</text>
+  <rect x="110" y="150" width="60" height="50" rx="15" stroke="#43b3a3" stroke-width="2" fill="rgba(67, 179, 163, 0.1)" />
+  <text x="118" y="180" fill="#065f46" font-size="10" font-weight="bold">Intestines</text>
+</svg>`,
+        diagramDescription: 'Human digestive tract showing the liver organ labelled X, stomach, and intestines.',
+        correctAnswer: 'Liver; bile emulsifies fats into small droplets',
+        modelAnswer: 'Organ X is the Liver.\nFunction of bile: Bile neutralises stomach acid and emulsifies fats (breaks large fat globules into tiny droplets for enzyme action).',
+        explanation: 'Liver produces bile, stored in the gall bladder.',
+        topic: 'Human Body & Digestive System',
+      },
+    ],
+  },
+
+  // 4. Term 2 Holiday Package: S.4 Mathematics (Uganda Curriculum)
+  {
+    id: 'exam-holiday-s4-math-t2',
+    title: 'Term 2 Holiday Package: S.4 Mathematics Practice & Revision',
+    subject: 'Mathematics',
+    level: 'o_level',
+    classGrade: 'S.4',
+    category: 'holiday_package',
+    term: 'Term 2',
+    examBoard: 'Wakiso / Kampala Joint Schools',
+    year: '2024',
+    session: 'Term 2 Holiday Work',
+    durationMinutes: 60,
+    totalMarks: 30,
+    instructions: [
+      'Complete this holiday revision package before the start of Term 3.',
+      'Show clear workings and mathematical proofs.',
+    ],
+    createdAt: '2026-11-04T11:00:00Z',
+    status: 'ready',
+    questions: [
+      {
+        id: 'hol-s4-q1',
+        number: 1,
+        type: 'multiple_choice',
+        text: 'The line passes through points (1, 3) and (5, 11). What is the gradient (slope) of this line?',
+        marks: 2,
+        choices: [
+          { id: 'A', label: 'A', text: '1/2' },
+          { id: 'B', label: 'B', text: '2' },
+          { id: 'C', label: 'C', text: '3' },
+          { id: 'D', label: 'D', text: '4' },
+        ],
+        correctAnswer: 'B',
+        modelAnswer: 'Gradient m = (y2 - y1) / (x2 - x1) = (11 - 3) / (5 - 1) = 8 / 4 = 2.',
+        explanation: 'm = change in y divided by change in x = 8 / 4 = 2.',
+        topic: 'Coordinate Geometry',
+      },
+      {
+        id: 'hol-s4-q2',
+        number: 2,
+        type: 'numerical',
+        text: 'The principal of UGX 500,000 is invested in a bank at simple interest rate of 8% per annum for 3 years. Calculate the total simple interest earned in UGX.',
+        marks: 3,
+        correctAnswer: '120000',
+        modelAnswer: 'Simple Interest I = (P * R * T) / 100\nI = (500,000 * 8 * 3) / 100 = 500,000 * 0.24 = UGX 120,000.',
+        explanation: 'Formula I = PRT/100 gives 120,000 UGX.',
+        topic: 'Commercial Arithmetic',
+      },
+      {
+        id: 'hol-s4-q3',
+        number: 3,
+        type: 'short_answer',
+        text: 'Find the values of x that satisfy the simultaneous equations: 2x + y = 11 and x - y = 1. State both x and y.',
+        marks: 4,
+        correctAnswer: 'x = 4, y = 3',
+        modelAnswer: 'Add the two equations:\n(2x + y) + (x - y) = 11 + 1\n3x = 12 => x = 4.\nSubstitute x = 4 into x - y = 1:\n4 - y = 1 => y = 3.\nSolution: x = 4, y = 3.',
+        explanation: 'Elimination method yields x = 4, y = 3.',
+        topic: 'Simultaneous Equations',
+      },
+    ],
+  },
+
+  // 5. Wakiso Joint Mock 2024 Physics (S.4 UCE)
+  {
+    id: 'exam-mock-wakiso-physics-2024',
+    title: 'Wakiso Joint Mock Examinations 2024 - Physics Paper 1',
+    subject: 'Physics',
+    level: 'o_level',
+    classGrade: 'S.4',
+    category: 'mock_exam',
+    examBoard: 'Wakiso Joint Mock',
+    code: '535/1',
+    year: '2024',
+    session: 'August Joint Mock Examination',
+    durationMinutes: 75,
+    totalMarks: 35,
+    instructions: [
+      'Take acceleration due to gravity g = 10 m/s².',
+      'Show all formula steps and specify correct SI units.',
+    ],
+    createdAt: '2026-11-05T08:00:00Z',
+    status: 'ready',
+    questions: [
+      {
+        id: 'wm-phy-q1',
+        number: 1,
+        type: 'multiple_choice',
+        text: 'What is the SI unit of electric resistance?',
+        marks: 1,
+        choices: [
+          { id: 'A', label: 'A', text: 'Volt (V)' },
+          { id: 'B', label: 'B', text: 'Ampere (A)' },
+          { id: 'C', label: 'C', text: 'Ohm (Ω)' },
+          { id: 'D', label: 'D', text: 'Watt (W)' },
+        ],
+        correctAnswer: 'C',
+        modelAnswer: 'The SI unit of resistance is the Ohm, symbolised by the Greek letter Omega (Ω).',
+        explanation: 'Resistance is measured in Ohms (Ω) where 1 Ω = 1 V / 1 A.',
+        topic: 'Current Electricity',
+      },
+      {
+        id: 'wm-phy-q2',
+        number: 2,
+        type: 'numerical',
+        text: 'Two resistors of resistance 4 Ω and 6 Ω are connected in parallel across a 12 V DC power source. Calculate the total equivalent resistance of the parallel combination in Ohms (Ω).',
+        marks: 3,
+        diagramSvg: `<svg viewBox="0 0 360 180" class="w-full max-w-sm mx-auto stroke-[#43b3a3] fill-none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 40,90 L 40,30 L 160,30" stroke="currentColor" stroke-width="2" />
+  <path d="M 40,90 L 40,150 L 320,150 L 320,90" stroke="currentColor" stroke-width="2" />
+  <line x1="30" y1="85" x2="50" y2="85" stroke="#f59e0b" stroke-width="3" />
+  <line x1="35" y1="95" x2="45" y2="95" stroke="#f59e0b" stroke-width="2" />
+  <text x="10" y="93" fill="#8a4508" font-size="11" font-weight="bold">12 V</text>
+  <rect x="160" y="22" width="40" height="16" fill="#dff7f3" stroke="currentColor" stroke-width="1.5" />
+  <text x="170" y="18" fill="#065f46" font-size="10" font-weight="bold">4 Ω</text>
+  <path d="M 200,30 L 240,30" stroke="currentColor" stroke-width="2" />
+  <rect x="240" y="22" width="40" height="16" fill="#dff7f3" stroke="currentColor" stroke-width="1.5" />
+  <text x="250" y="18" fill="#065f46" font-size="10" font-weight="bold">6 Ω</text>
+  <path d="M 280,30 L 320,30 L 320,90" stroke="currentColor" stroke-width="2" />
+</svg>`,
+        diagramDescription: 'Circuit schematic showing 4 ohm and 6 ohm resistors connected to a 12 V source.',
+        correctAnswer: '2.4',
+        modelAnswer: 'For two resistors in parallel:\n1/R_eq = 1/R1 + 1/R2 = 1/4 + 1/6 = (3 + 2)/12 = 5/12\nR_eq = 12 / 5 = 2.4 Ω.',
+        explanation: 'Using the parallel resistance formula R_eq = (R1 * R2) / (R1 + R2) = (24) / (10) = 2.4 Ω.',
+        topic: 'Circuits & Ohm Law',
+      },
+      {
+        id: 'wm-phy-q3',
+        number: 3,
+        type: 'short_answer',
+        text: 'State Newton\'s Second Law of Motion in words, and write down its mathematical equation.',
+        marks: 3,
+        correctAnswer: 'The rate of change of momentum is directly proportional to the applied external force; F = ma',
+        modelAnswer: 'Newton\'s Second Law states that the rate of change of momentum of a body is directly proportional to the applied external force and takes place in the direction of the force.\nMathematical formula: F = m * a (Force = mass * acceleration).',
+        explanation: 'F = ma when mass remains constant.',
+        topic: 'Mechanics & Force',
+      },
+    ],
+  },
+
+  // 6. Term 1 Holiday Package: P.7 Social Studies (SST) & RE
+  {
+    id: 'exam-holiday-p7-sst-t1',
+    title: 'Term 1 Holiday Package: P.7 Social Studies (SST) & Religious Education',
+    subject: 'Social Studies (SST)',
+    level: 'primary',
+    classGrade: 'P.7',
+    category: 'holiday_package',
+    term: 'Term 1',
+    examBoard: 'Kampala Junior Schools Revision',
+    year: '2024',
+    session: 'Term 1 Holiday Work',
+    durationMinutes: 60,
+    totalMarks: 30,
+    instructions: [
+      'Write clear, complete answers.',
+      'Review your East African geography and history notes.',
+    ],
+    createdAt: '2026-11-06T09:30:00Z',
+    status: 'ready',
+    questions: [
+      {
+        id: 'sst-q1',
+        number: 1,
+        type: 'multiple_choice',
+        text: 'Which is the longest river in Uganda, and in which natural water body does it have its primary source?',
+        marks: 2,
+        choices: [
+          { id: 'A', label: 'A', text: 'River Nile; Lake Victoria' },
+          { id: 'B', label: 'B', text: 'River Katonga; Lake Edward' },
+          { id: 'C', label: 'C', text: 'River Kafu; Lake Kyoga' },
+          { id: 'D', label: 'D', text: 'River Semliki; Lake Albert' },
+        ],
+        correctAnswer: 'A',
+        modelAnswer: 'River Nile (Victoria Nile) originates at Jinja from Lake Victoria, flowing northward to the Mediterranean Sea.',
+        explanation: 'Lake Victoria is the principal source of the Nile.',
+        topic: 'Physical Features of Uganda',
+      },
+      {
+        id: 'sst-q2',
+        number: 2,
+        type: 'short_answer',
+        text: 'Mention any two benefits Uganda gains from being a member state of the East African Community (EAC).',
+        marks: 2,
+        correctAnswer: 'Wider market for goods and free movement of labor and citizens',
+        modelAnswer: '1. Access to a wider regional market for agricultural and manufactured goods with reduced or zero tariffs.\n2. Free cross-border movement of people, labor, and services across partner states.',
+        explanation: 'EAC facilitates regional trade, common customs, and infrastructure development.',
+        topic: 'Regional Cooperation & Trade',
+      },
+      {
+        id: 'sst-q3',
+        number: 3,
+        type: 'short_answer',
+        text: 'Why was the 1900 Buganda Agreement significant in the colonial history of Uganda? Give two reasons.',
+        marks: 3,
+        correctAnswer: 'It divided land into Mailo and Crown land and established British indirect rule',
+        modelAnswer: '1. It introduced the Mailo land system, dividing land between the Kabaka, chiefs, and the British Protectorate government.\n2. It formalized British indirect rule through local chiefs and placed Buganda under formal British administration.',
+        explanation: 'The 1900 Agreement was foundational to Uganda\'s colonial political structure.',
+        topic: 'Colonial Era & Governance',
+      },
+    ],
+  },
+
+  // 7. UNEB UACE 2023 Pure Mathematics Paper 1 (S.6)
+  {
+    id: 'exam-uace-pure-math-2023',
+    title: 'UNEB UACE 2023 Pure Mathematics Paper 1',
+    subject: 'Pure Mathematics',
+    level: 'a_level',
+    classGrade: 'S.6',
+    category: 'past_paper',
+    examBoard: 'UNEB / UACE',
+    code: 'P425/1',
+    year: '2023',
+    session: 'November UACE Official',
+    durationMinutes: 120,
+    totalMarks: 50,
+    instructions: [
+      'Answer all questions in Section A and five questions from Section B.',
+      'All necessary working must be shown clearly.',
+      'Mathematical tables and non-programmable calculators may be used.',
+    ],
+    createdAt: '2026-11-07T08:00:00Z',
+    status: 'ready',
+    questions: [
+      {
+        id: 'uace-m-q1',
+        number: 1,
+        type: 'numerical',
+        text: 'Differentiate the function f(x) = 3x⁴ - 5x² + 7x - 9 with respect to x. Evaluate f\'(2).',
+        marks: 4,
+        correctAnswer: '83',
+        modelAnswer: 'f\'(x) = 12x³ - 10x + 7.\nEvaluate at x = 2:\nf\'(2) = 12(2)³ - 10(2) + 7 = 12(8) - 20 + 7 = 96 - 20 + 7 = 83.',
+        explanation: 'Power rule: d/dx(x^n) = n*x^(n-1). 12(8) - 20 + 7 = 83.',
+        topic: 'Calculus & Differentiation',
+      },
+      {
+        id: 'uace-m-q2',
+        number: 2,
+        type: 'multiple_choice',
+        text: 'Find the sum of the first 10 terms of the geometric progression: 3, 6, 12, 24, ...',
+        marks: 3,
+        choices: [
+          { id: 'A', label: 'A', text: '1,536' },
+          { id: 'B', label: 'B', text: '3,069' },
+          { id: 'C', label: 'C', text: '3,072' },
+          { id: 'D', label: 'D', text: '6,141' },
+        ],
+        correctAnswer: 'B',
+        modelAnswer: 'First term a = 3, common ratio r = 6 / 3 = 2.\nSum S_n = a(r^n - 1) / (r - 1)\nS_10 = 3(2^10 - 1) / (2 - 1) = 3(1024 - 1) / 1 = 3 * 1023 = 3,069.',
+        explanation: 'S_10 = 3 * 1023 = 3069.',
+        topic: 'Sequences & Series',
+      },
+      {
+        id: 'uace-m-q3',
+        number: 3,
+        type: 'numerical',
+        text: 'Evaluate the definite integral: ∫ from 1 to 3 of (4x³ - 2x) dx.',
+        marks: 4,
+        correctAnswer: '72',
+        modelAnswer: 'Indefinite integral ∫(4x³ - 2x) dx = x⁴ - x² + C.\nEvaluate from 1 to 3:\nAt x = 3: (3)⁴ - (3)² = 81 - 9 = 72.\nAt x = 1: (1)⁴ - (1)² = 1 - 1 = 0.\nValue = 72 - 0 = 72.',
+        explanation: 'Definite integral equals 72.',
+        topic: 'Integral Calculus',
+      },
+    ],
+  },
+
+  // 8. Revision Notes: S.4 Physics — Current Electricity & Circuits
+  {
+    id: 'exam-notes-s4-physics-electricity',
+    title: 'S.4 Physics Revision Summary: Current Electricity & Ohm\'s Law',
+    subject: 'Physics',
+    level: 'o_level',
+    classGrade: 'S.4',
+    category: 'revision_notes',
+    examBoard: 'UNEB / UCE Syllabus',
+    year: '2024',
+    session: 'Core Syllabus Revision',
+    durationMinutes: 20,
+    totalMarks: 15,
+    instructions: [
+      'Read and study these syllabus summary notes carefully.',
+      'Test your comprehension with the attached practice questions.',
+    ],
+    notesContent: `### Current Electricity & Ohm's Law — Key Revision Notes
+
+#### 1. Electric Current (I)
+- **Definition:** The rate of flow of electric charge through a conductor.
+- **Formula:** $I = \\frac{Q}{t}$ where $Q$ is charge in Coulombs (C) and $t$ is time in seconds (s).
+- **SI Unit:** Ampere (A). Measured using an **Ammeter** connected in **series**.
+
+#### 2. Potential Difference / Voltage (V)
+- **Definition:** The work done per unit charge in moving a charge between two points in a circuit.
+- **Formula:** $V = \\frac{W}{Q}$ (Joules per Coulomb).
+- **SI Unit:** Volt (V). Measured using a **Voltmeter** connected in **parallel** across components.
+
+#### 3. Ohm's Law
+- **Law Statement:** The current passing through a metallic conductor is directly proportional to the potential difference across its ends, provided temperature and other physical conditions remain constant.
+- **Equation:** $V = I \\times R$ or $R = \\frac{V}{I}$.
+- **Ohmic Conductors:** Graph of $V$ against $I$ is a straight line through the origin.
+
+#### 4. Resistors in Series vs. Parallel
+| Series Resistors | Parallel Resistors |
+| :--- | :--- |
+| Same current through each resistor | Potential difference is the same across each branch |
+| Total Voltage: $V = V_1 + V_2$ | Total Current: $I = I_1 + I_2$ |
+| $R_{total} = R_1 + R_2 + R_3$ | $\\frac{1}{R_{total}} = \\frac{1}{R_1} + \\frac{1}{R_2}$ |
+| If one breaks, entire circuit stops | If one branch fails, other branches continue working |
+
+#### 5. Electrical Power & Energy
+- Electrical Power: $P = V \\times I = I^2 R = \\frac{V^2}{R}$ (Watts)
+- Electrical Energy: $E = P \\times t = V I t$ (Joules or kWh)`,
+    createdAt: '2026-11-08T07:00:00Z',
+    status: 'ready',
+    questions: [
+      {
+        id: 'notes-phy-q1',
+        number: 1,
+        type: 'multiple_choice',
+        text: 'Why is an ammeter always connected in series rather than parallel in a circuit?',
+        marks: 2,
+        choices: [
+          { id: 'A', label: 'A', text: 'It has very low resistance so it does not alter circuit current' },
+          { id: 'B', label: 'B', text: 'It has very high resistance to block high voltage' },
+          { id: 'C', label: 'C', text: 'It prevents the battery from draining' },
+          { id: 'D', label: 'D', text: 'It converts alternating current into direct current' },
+        ],
+        correctAnswer: 'A',
+        modelAnswer: 'An ammeter has near-zero internal resistance so connecting it in series measures the true current flowing without adding resistance.',
+        explanation: 'Low internal resistance ensures minimal voltage drop across the meter.',
+        topic: 'Current Electricity & Instruments',
+      },
+      {
+        id: 'notes-phy-q2',
+        number: 2,
+        type: 'numerical',
+        text: 'An electric iron is rated 240 V, 1200 W. Calculate the current in Amperes drawn when connected to the 240 V mains supply.',
+        marks: 3,
+        correctAnswer: '5',
+        modelAnswer: 'Power P = V * I => I = P / V = 1200 W / 240 V = 5 A.',
+        explanation: 'I = 1200 / 240 = 5 A.',
+        topic: 'Electrical Power & Energy',
+      },
+    ],
+  },
+];

@@ -1,0 +1,6 @@
+{
+  "name": "SkoolMate Exams | Your Digital School Partner",
+  "description": "Attendance, past papers, exams, and grading — all in one system built for schools by Omuto. Ingest past papers from Telegram and take interactive mobile tests.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
